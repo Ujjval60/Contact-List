@@ -47,10 +47,14 @@ onload = function () {
 		inp.addEventListener("input", function (e) {
 			let a, val = this.value;
 			closeAllLists();
-
+			console.log(this.input);
 			if ( val.length > 10 )
 				return;
-
+			for (let i = 0; i < val.length; i++) {
+        			if (val[i] < "0" || val[i] > "9") {
+          			return;
+        			}
+      			}
 			currentFocus = -1;
 			a = document.createElement("DIV");
 
