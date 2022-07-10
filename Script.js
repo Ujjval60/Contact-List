@@ -48,7 +48,7 @@ onload = function () {
 			let a, val = this.value;
 			closeAllLists();
 
-			if ( val.length >= 10 )
+			if ( val.length > 10 )
 				return;
 
 			currentFocus = -1;
