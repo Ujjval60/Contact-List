@@ -14,13 +14,13 @@ onload = function () {
 	add.onclick = function () {
 		let details = contact_info.value;
 		details = details.split(',');
-		if (details.length != = 2) {
+		if (details.length !== 2) {
 			alert("Incorrectly formatted input");
 			return;
 		}
 		details[0] = details[0].trim();
 		details[1] = details[1].trim();
-		if (details[1].length != = 6) {
+		if (details[1].length !== 10) {
 			alert("Incorrectly formatted input");
 			return;
 		}
@@ -31,7 +31,7 @@ onload = function () {
 
 	del.onclick = function () {
 		let details = delete_info.value.trim();
-		if (details.length != = 6) {
+		if (details.length !== 10) {
 			alert("Incorrectly formatted input");
 			return;
 		}
@@ -59,7 +59,7 @@ onload = function () {
 			this.parentNode.appendChild(a);
 
 			let arr = [];
-			if (val.length == = this.input.length) {
+			if (val.length === this.input.length) {
 				arr = contact_list.findNext(-2);
 			} else if (val.length < this.input.length) {
 				this.input = val;
@@ -85,13 +85,13 @@ onload = function () {
 		inp.addEventListener("keydown", function (e) {
 			let x = document.getElementById(this.id + "autocomplete-list");
 			if (x) x = x.getElementsByTagName("div");
-			if (e.keyCode == = 40) {
+			if (e.keyCode === 40) {
 				currentFocus++;
 				addActive(x);
-			} else if (e.keyCode == = 38) {
+			} else if (e.keyCode === 38) {
 				currentFocus--;
 				addActive(x);
-			} else if (e.keyCode == = 13) {
+			} else if (e.keyCode === 13) {
 				e.preventDefault();
 				if (currentFocus > -1) {
 					if (x) x[currentFocus * 2].click();
@@ -116,7 +116,7 @@ onload = function () {
 		let closeAllLists = (elmnt) => {
 			const x = document.getElementsByClassName("autocomplete-items");
 			for (let i = 0; i < x.length; i++) {
-				if (elmnt != = x[i] && elmnt != = inp) {
+				if (elmnt !== x[i] && elmnt !== inp) {
 					x[i].parentNode.removeChild(x[i]);
 				}
 			}
