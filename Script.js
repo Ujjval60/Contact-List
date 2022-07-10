@@ -24,6 +24,12 @@ onload = function () {
 			alert("Incorrectly formatted input");
 			return;
 		}
+		for (let i = 0; i < details[1].length; i++) {
+      			if (details[1][i] < "0" || details[1][i] > "9") {
+       		 	alert("Incorrectly formatted input");
+        		return;
+      		    }
+    		}
 		contact_list.add(details[1], details[0]);
 		info.innerHTML += details + " added to contact list<br>";
 		contact_info.value = "";
@@ -35,6 +41,12 @@ onload = function () {
 			alert("Incorrectly formatted input");
 			return;
 		}
+		for (let i = 0; i < details.length; i++) {
+		      if (details[i] < "0" || details[i] > "9") {
+			alert("Incorrectly formatted input");
+			return;
+		      }
+		    }
 		contact_list.del(details);
 		info.innerHTML += details + " deleted from contact list<br>";
 		delete_info.value = "";
