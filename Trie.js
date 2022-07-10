@@ -22,7 +22,7 @@ class Trie {
 
         let init = [
             ["Ujjval","9872611111"],
-            ["Akshu", "8654312345"];
+            ["Akshu", "8654312345"]
         ];
 
         for(let i=0;i<init.length;i++){
