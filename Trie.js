@@ -39,8 +39,8 @@ class Trie {
 
         if(node.children[number[pos]-'0']===null){
             let newnode = new TrieNode();
-            node.children[number[pos]-'0'] = newnode;
             newnode.parent = node;
+            node.children[number[pos]-'0'] = newnode;   
         }
         this.add(number, name, pos+1, node.children[number[pos]-'0']);
     }
@@ -83,9 +83,7 @@ class Trie {
         }
 
         if(node.children[number[pos]-'0']===null){
-            let newnode = new TrieNode();
-            node.children[number[pos]-'0'] = newnode;
-            newnode.parent = node;
+            return;
         }
         this.del(number, pos+1, node.children[number[pos]-'0']);
     }
